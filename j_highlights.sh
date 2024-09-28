@@ -6,6 +6,7 @@ ls 【公式】ハイライト* > files_to_delete.txt
 python3 mk_delete_command.py
 chmod u+x file_delete.sh
 ./file_delete.sh
+rm file_delete.sh
 rm files_to_delete.txt
 rm files_tmp.txt
 rm files.txt
