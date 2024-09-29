@@ -16,10 +16,10 @@ pip install selenium yt-dlp
 chmod u+x j_highlights.sh
 j_highlights.sh {見たいカテゴリー}
 
-# 例 J2のハイライトを見る場合
+# 例 J2の直近の節のハイライトを見る場合
 j_highlights.sh 2
 
-# 例 J2の直近の節の第10節のハイライトを見る場合
+# 例 J2の第10節のハイライトを見る場合
 j_highlights.sh 2 10
 ```
 出力形式はwembとなります。(ブラウザからオフラインで見れる動画ファイルになります)
