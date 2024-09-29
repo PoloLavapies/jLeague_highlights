@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
+from selenium.webdriver.chrome.options import Options
 import re
 import sys
 import time
@@ -9,7 +9,9 @@ from yt_dlp import YoutubeDL
 TIME_TO_WAIT = 0.1
 TIME_TO_WAIT_LONG = 3
 
-driver = webdriver.Chrome()
+options = Options()
+options.add_argument('--headless')
+driver = webdriver.Chrome(options=options)
 
 url = "https://www.youtube.com/@jleaguehighlightschannel/videos"
 driver.get(url)
@@ -49,7 +51,6 @@ for link in links:
 
 ydl_opts = {
     'format': 'bestvideo+bestaudio/best', 
-    # 'merge_output_format':'mp4'
 }
 with YoutubeDL(ydl_opts) as ydl:
     ydl.download(links_to_get)
