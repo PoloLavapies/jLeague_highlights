@@ -1,10 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+import re
 import sys
 import time
 from yt_dlp import YoutubeDL
-import re
 
 TIME_TO_WAIT = 0.1
 TIME_TO_WAIT_LONG = 3
@@ -47,6 +47,9 @@ for link in links:
     except:
         pass
 
-ydl_opts = {'format': 'bestvideo+bestaudio/best'}
+ydl_opts = {
+    'format': 'bestvideo+bestaudio/best', 
+    # 'merge_output_format':'mp4'
+}
 with YoutubeDL(ydl_opts) as ydl:
     ydl.download(links_to_get)

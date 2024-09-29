@@ -8,6 +8,7 @@ Jリーグの試合の3分ハイライトを見るためのプログラムです
 ```
 git clone https://github.com/PoloLavapies/jLeague_highlights.git
 cd jLeague_highlights
+brew install ffmpeg
 pip install selenium yt-dlp
 ```
 なお、Pythonがインストールされていない場合は、インストールが必要です。

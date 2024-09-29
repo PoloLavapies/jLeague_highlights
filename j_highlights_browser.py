@@ -3,7 +3,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 import sys
 import time
-from yt_dlp import YoutubeDL
 import re
 
 TIME_TO_WAIT = 0.1
