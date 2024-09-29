@@ -8,6 +8,7 @@ import re
 
 TIME_TO_WAIT = 0.1
 TIME_TO_WAIT_LONG = 3
+TIME_TO_WAIT_WATCH_MOVIE = 200
 
 driver = webdriver.Chrome()
 
@@ -38,17 +39,15 @@ else:
         except:
             pass
 
-links_to_get = []
+links_to_watch = []
 for link in links:
     try:
         link_text = link.text
         if "Ｊ" + category + "リーグ" in link_text and "第" + str(matchday) + "節" in link_text:
-            links_to_get.append(link.get_attribute("href"))
+            links_to_watch.append(link.get_attribute("href"))
     except:
         pass
 
-
-for link in links_to_get:
-    ydl_opts = {'format': 'best'}
-    with YoutubeDL(ydl_opts) as ydl:
-        ydl.download([link])
+for link in links_to_watch:
+    driver.get(link)
+    time.sleep(TIME_TO_WAIT_WATCH_MOVIE)
