@@ -47,8 +47,6 @@ for link in links:
     except:
         pass
 
-
-for link in links_to_get:
-    ydl_opts = {'format': 'best'}
-    with YoutubeDL(ydl_opts) as ydl:
-        ydl.download([link])
+ydl_opts = {'format': 'bestvideo+bestaudio/best'}
+with YoutubeDL(ydl_opts) as ydl:
+    ydl.download(links_to_get)
